@@ -1,0 +1,58 @@
+<p class='message'><?= $message ?></p>
+
+<form id="form" method="POST" accept-charset="utf-8" action="../app/lib/users/set/index.php">
+    <div class="form-field">
+        <label for="first-name">
+            Prénom :
+            <input type="text" placeholder="Prénom" name="first-name" id="first-name" value="<?= $user[0]['FirstName'] ?>">
+        </label>
+    </div>
+
+    <div class="form-field">
+        <label for="last-name">
+            Nom :
+            <input type="text" placeholder="Nom" name="last-name" id="last-name" value="<?= $user[0]['LastName'] ?>">
+        </label>
+    </div>
+
+    <div class="form-field">
+        <label for="email">
+            E-mail :
+            <input type="text" placeholder="E-mail" name="email" id="email" value="<?= $user[0]['Email'] ?>">
+        </label>
+    </div>
+
+    <div class="form-field">
+        <label for="new-pwd">
+            Nouveau mot de passe :
+            <input type="password" placeholder='Nouveau mot de passe' name="new-pwd" id="new-pwd">
+        </label>
+    </div>
+
+    <div class="form-field">
+        <label for="new-pwd2">
+            Confirmer le nouveau mot de passe :
+            <input type="password" placeholder="Confirmer le nouveau mot de passe" name="new-pwd2" id="new-pwd2">
+        </label>
+    </div>
+
+    <div class="form-field">
+        <input type="checkbox" name="participate" id="participate" <?= ($user[0]['Participate'] ? 'checked' : '') ?>>
+        <label for="participate">Participer à B2M-Tombola</label>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="form-field">
+        <label for="pwd">
+            Mot de passe actuel : <span class="mandatory-mark">*</span>
+            <input type="password" placeholder='Mot de passe actuel' name="pwd" id="pwd" required aria-required="true">
+        </label>
+    </div>
+
+    <div class="submit">
+        <input type="submit" value="Sauvegarder">
+    </div>
+</form>

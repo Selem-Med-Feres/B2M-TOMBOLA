@@ -1,0 +1,65 @@
+<div id="register" class="grid-50-50">
+    <div class="left-container">
+        <div class="logo">
+            <img src="./img/Logo.svg" alt="">
+        </div>
+
+        <div class="form-wrapper">
+            <h1>S'inscrire</h1>
+            <p class='message <?= $message["class"] ?>'><?= $message['text'] ?></p>
+
+            <form id="form" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+                <div class="form-field">
+                    <label for="first-name">
+                        Prénom <span class="mandatory-mark">*</span>
+                        <input type="text" placeholder="Prénom" name="first-name" id="first-name" required aria-required="true">
+                    </label>
+                </div>
+
+                <div class="form-field">
+                    <label for="last-name">
+                        Nom <span class="mandatory-mark">*</span>
+                        <input type="text" placeholder="Nom" name="last-name" id="last-name" required aria-required="true">
+                    </label>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">
+                        E-mail <span class="mandatory-mark">*</span>
+                        <input type="text" placeholder="E-mail" name="email" id="email" required aria-required="true">
+                    </label>
+                </div>
+
+                <div class="form-field">
+                    <label for="pwd">
+                        Mot de passe <span class="mandatory-mark">*</span>
+                        <input type="password" placeholder='Mot de passe' name="pwd" id="pwd" required aria-required="true">
+                    </label>
+                </div>
+
+                <div class="form-field">
+                    <label for="pwd2">
+                        Confirmer le mot de passe <span class="mandatory-mark">*</span>
+                        <input type="password" placeholder="Mot de passe" name="pwd2" id="pwd2" required aria-required="true">
+                    </label>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="S'inscrire">
+                    <br>
+                    <br>
+                    <div class="inline-container">
+                        <a href="?page=forgot-password">Mot de passe oublié ?</a>
+                        <br>
+                        <a href="?page=login">Se connecter</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="right-container">
+        <div class="img-wrapper"></div>
+    </div>
+</div>

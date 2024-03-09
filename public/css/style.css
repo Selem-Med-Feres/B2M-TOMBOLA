@@ -1,0 +1,242 @@
+@font-face {
+    font-family: 'Good Times';
+    src: url('../webfonts/good-times.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Northwell';
+    src: url('../webfonts/Northwell.otf') format('opentype');
+}
+
+:root {
+    --main-color: #ee8000;
+    --glow: #ee800040;
+
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    margin: 0;
+
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid-50-50 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#main,
+#main> :first-child {
+    height: 100%;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+textarea,
+select {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--main-color);
+}
+
+input[type="submit"],
+button.cancel-btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 1000px;
+    padding: 10px 25px;
+    margin: 25px auto 5px;
+    max-width: max-content;
+    font-size: 0.85rem;
+    transition: 0.25s;
+    background-color: var(--main-color);
+    color: white;
+}
+
+.mandatory-mark {
+    color: var(--main-color) !important;
+    font-weight: bold;
+}
+
+a {
+    color: black;
+}
+
+.loading-spinner {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--main-color);
+}
+
+.loading-spinner span {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-right-color: var(--main-color);
+    animation: spinner-anim 0.8s linear infinite;
+}
+
+a:hover {
+    color: var(--main-color);
+}
+
+a {
+    transition: .1s;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #742c08;
+}
+
+.top-0 {
+    top: 0
+}
+
+.right-0 {
+    right: 0
+}
+
+.w-40 {
+    width: 15rem
+}
+
+.left-0 {
+    left: 0
+}
+
+.top-auto {
+    top: auto
+}
+
+.right-auto {
+    right: auto
+}
+
+.left-auto {
+    left: auto
+}
+
+.cursor-pointer {
+    cursor: pointer
+}
+
+.flex {
+    display: flex
+}
+
+
+.items-center {
+    align-items: center
+}
+
+.justify-center {
+    justify-content: center
+}
+
+
+.h-40 {
+    height: 15rem
+}
+
+
+.absolute {
+    position: absolute
+}
+
+.relative {
+    position: relative
+}
+
+.sidebar,
+.sidebar .controls,
+.sidebar .main-controls {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-between;
+    background: white;
+    vertical-align: middle;
+}
+
+.sidebar {
+    padding: 15px;
+    height: 30px;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 1rem 1rem;
+}
+
+.sidebar .main-controls,
+.sidebar .controls,
+.sidebar .logout {
+    align-items: center;
+}
+
+.sidebar .nav-item {
+    cursor: pointer;
+    transition: .1s;
+    color: black;
+    font-size: 1rem;
+}
+
+.sidebar .nav-item:hover {
+    color: var(--main-color);
+}
+
+.sidebar .nav-item.active {
+    color: var(--main-color);
+    pointer-events: none;
+}
+
+@keyframes spinner-anim {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

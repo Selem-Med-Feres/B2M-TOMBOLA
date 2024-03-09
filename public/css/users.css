@@ -1,0 +1,81 @@
+#users {
+    display: grid;
+    grid-template-rows: 60px calc(100vh - 60px);
+    gap: 1.5rem;
+}
+
+#users .users-list {
+    padding: 1rem;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+#users .users-list table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 2rem 0;
+}
+
+#users .users-list table thead tr {
+    background-color: var(--main-color);
+    text-align: center;
+}
+
+#users .users-list table th {
+    padding: 0.5rem;
+}
+
+#users .users-list table th:first-child {
+    text-align: center;
+    border-radius: 0.5rem 0 0 0;
+}
+
+#users .users-list table th:last-child {
+    border-radius: 0 0.5rem 0 0;
+}
+
+#users .users-list table tr:last-child td:first-child {
+    text-align: center;
+    border-radius: 0 0 0 0.5rem;
+}
+
+#users .users-list table tr:last-child td:last-child {
+    border-radius: 0 0 0.5rem 0;
+}
+
+#users .users-list table th,
+#users .users-list table th * {
+    margin: 0;
+    color: #ffffff;
+}
+
+#users .users-list table th p:first-child {
+    border-bottom: solid 1px white;
+}
+
+#users .users-list table td {
+    padding: 10px 7px;
+    text-align: center;
+    border: 1px solid #fff;
+}
+
+#users .users-list table td a {
+    text-decoration: none;
+}
+
+#users .users-list table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#users .users-list table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+#users .users-list table tbody tr:last-of-type td:last-of-type {
+    border-radius: 0 0 4px 0;
+}
+
+#users .users-list table tbody tr:hover {
+    font-weight: bold;
+    color: var(--main-color);
+}

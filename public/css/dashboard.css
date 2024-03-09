@@ -1,0 +1,344 @@
+#dashboard {
+    display: grid;
+    grid-template-rows: 60px calc(100vh - 60px);
+}
+
+#dashboard .user-area {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+}
+
+#dashboard .user-area * {
+    text-align: center;
+    margin: auto;
+}
+
+#dashboard .user-area .header .welcome-title {
+    margin: 50px auto 20px auto;
+}
+
+#dashboard .user-area .header .instructions {
+    margin: 20px auto 50px auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    width: 50%;
+}
+
+#dashboard .user-area .welcome-title span {
+    font-family: 'Good Times', sans-serif;
+    font-size: 1.7rem;
+}
+
+#dashboard .user-area .welcome-title span span {
+    color: var(--main-color);
+}
+
+#dashboard .timer-container {
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dashboard .timer-container .wrapper {
+    padding: 20px;
+    max-height: 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#dashboard .cooldown-area .timer-container .wrapper {
+    width: 800px;
+    gap: 20px;
+}
+
+#dashboard .play-area .timer-container .wrapper {
+    gap: 10px;
+    width: 75%
+}
+
+#dashboard .result-area .timer-container .wrapper {
+    gap: 20px;
+    transform: scale(0.6);
+}
+
+
+#dashboard .timer-container .wrapper div {
+    text-align: center;
+    width: 24%;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+#dashboard .play-area .timer-container .wrapper div {
+    font-size: 0.7rem;
+}
+
+#dashboard .timer-container .wrapper div:first-child {
+    background: var(--main-color);
+    color: white;
+}
+
+#dashboard .timer-container .wrapper div:nth-child(2) {
+    background: var(--main-color);
+    color: white;
+}
+
+#dashboard .timer-container .wrapper div:nth-child(3) {
+    background: black;
+    color: #fff;
+}
+
+#dashboard .timer-container .wrapper div:last-child {
+    background: black;
+    color: #fff;
+}
+
+#dashboard .timer-container .wrapper div h2 {
+    padding: 0;
+    margin: 0;
+}
+
+#dashboard .cooldown-area .timer-container .wrapper div h2 {
+    font-size: 5rem;
+}
+
+#dashboard .circle-decoration {
+    position: absolute;
+    z-index: -1;
+    top: calc(50% - 40vh);
+    left: calc(-50% + 32vw);
+    width: 474px;
+    height: 474px;
+    border-radius: 100%;
+    border: 6px dashed var(--main-color);
+    animation: rotatingCircle infinite linear 60s;
+}
+
+#dashboard .user-area .see-you {
+    font-family: 'Northwell', sans-serif;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    font-size: 1.25rem;
+    z-index: -1;
+}
+
+
+#dashboard .hexagon {
+    z-index: -2;
+    position: relative;
+    width: 160px;
+    height: 92.38px;
+    margin: 46.19px 0;
+    filter: blur(20px);
+    transition: .1s;
+}
+
+#dashboard .cube-wrapper:not(.reserved):hover .hexagon {
+    background-color: var(--glow);
+}
+
+#dashboard .cube-wrapper.selected .hexagon {
+    background-color: var(--glow);
+}
+
+#dashboard .cube-wrapper.targeted {
+    border-radius: 1rem;
+    background-color: var(--glow);
+}
+
+#dashboard .cube-wrapper.reserved {
+    filter: grayscale();
+    cursor: not-allowed;
+}
+
+#dashboard .cube-wrapper.selected:not(.reserved) {
+    animation: hover 1.5s ease-in-out infinite alternate;
+}
+
+#dashboard .hexagon::before,
+#dashboard .hexagon::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 80px solid transparent;
+    transition: .1s;
+    border-right: 80px solid transparent;
+    opacity: 0;
+}
+
+#dashboard .hexagon:before {
+    border-bottom: 46.19px solid var(--glow);
+    bottom: 100%;
+}
+
+#dashboard .hexagon:after {
+    border-top: 46.19px solid var(--glow);
+    top: 100%;
+    width: 0;
+}
+
+#dashboard .cube-wrapper:not(.reserved):hover .hexagon::after,
+#dashboard .cube-wrapper:not(.reserved):hover .hexagon::before {
+    opacity: 1;
+}
+
+#dashboard .cube-wrapper.selected .hexagon::after,
+#dashboard .cube-wrapper.selected .hexagon::before {
+    opacity: 1;
+}
+
+#dashboard .back {
+    background-image: url("../img/back.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+#dashboard .top {
+    background-image: url("../img/top.png");
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+#dashboard .left {
+    background-image: url("../img/left.png");
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+#dashboard .right {
+    background-image: url("../img/right.png");
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+#dashboard .cube-wrapper {
+    transition: transform 300ms;
+    animation-play-state: running;
+    margin: 10px auto;
+    height: 15rem;
+    width: 15rem;
+}
+
+#dashboard .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-rows: min-content;
+}
+
+#dashboard .draw-list {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+}
+
+#dashboard .draw-list::-webkit-scrollbar {
+    width: 0;
+    display: none;
+    visibility: hidden;
+}
+
+#dashboard .draw-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 100%;
+    width: calc(100% - 2rem);
+    padding: 0 1rem;
+    border-radius: 1rem 1rem 0 1rem;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+}
+
+#dashboard .user-area .play-area {
+    display: grid;
+    grid-template-columns: 1.5fr 2.25fr;
+    gap: 2rem;
+    height: calc(100% - 30px);
+    padding: 30px 0 0 30px;
+}
+
+#dashboard .user-area .play-area .welcome-title {
+    margin: 0 auto 20px auto;
+}
+
+#dashboard .user-area .play-area .instructions {
+    margin: 20px auto 10px auto;
+    max-width: 75%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+#dashboard .user-area .play-area .timer-container .wrapper div h2 {
+    font-size: 2.5rem;
+}
+
+#dashboard .user-area .play-area #make-draw input[type="submit"] {
+    margin: 30px auto 20px auto;
+    cursor: pointer;
+}
+
+#dashboard .user-area .play-area #make-draw input[type="submit"] {
+    margin: 30px auto 20px auto;
+}
+
+#dashboard .user-area .result-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#dashboard .user-area .result-area .result {
+    width: 100%;
+    margin: 0 auto auto;
+}
+
+#dashboard .user-area .result-area .details {
+    width: 100%;
+    margin: auto auto 0;
+}
+
+#dashboard .user-area .result-area .gift-to h1 {
+    padding: 1.5rem;
+    width: fit-content;
+    border-radius: 1rem;
+    background-color: var(--main-color);
+    font-size: 2.0rem;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.16);
+}
+
+@keyframes hover {
+    from {
+        transform: translateY(-0.5rem);
+    }
+
+    to {
+        transform: translateY(0.5rem);
+    }
+}
+
+
+@keyframes rotatingCircle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,73 @@
+<div id="dashboard">
+    <?= renderNavBar($page, $user[0]['Admin']) ?>
+
+    <div class="user-area">
+        <?php switch ($mode) {
+            case 'Register': ?>
+                <div class="cooldown-area">
+                    <div class="header">
+                        <h1 class="welcome-title">Bienvenu à <span>B<span>2</span>M - Tombola !</span></h1>
+                        <p class="instructions">Une fois la phase d'enregistrement terminée, le premier venu aura le privilège de choisir parmi une plus vaste sélection de boîtes. Assurez-vous de revenir dans :</p>
+                    </div>
+
+                    <?= renderCounter($mode, $DrawDateTime) ?>
+
+                    <div class="see-you">
+                        <h2>See You ;)</h2>
+                    </div>
+
+                    <div class="circle-decoration"></div>
+                </div>
+            <?php break;
+
+            case 'Draw': ?>
+                <div class="play-area">
+                    <div class="detais" id="details">
+                        <h1 class="welcome-title">Bienvenu à <span>B<span>2</span>M - Tombola !</span></h1>
+                        <p class="instructions">L'heure de choisir est venue ! Sélectionnez une boîte et préparez votre cadeau avant : </p>
+
+                        <?= renderCounter($mode, $EndDateTime) ?>
+                    </div>
+
+                    <div class="draw-container">
+                        <div class="draw-list" id="draw-list">
+                            <div class="boxes"></div>
+                        </div>
+
+                        <form id="make-draw" method="POST" accept-charset="utf-8" action="../app/lib/draws/set/index.php">
+                            <input type="hidden" name="draw-id" id="draw-id">
+                            <input type="submit" value="Séléctionner">
+                        </form>
+                    </div>
+                </div>
+            <?php break;
+
+            case 'Gift': ?>
+                <div class="result-area">
+                    <div class="result">
+                        <div class="header">
+                            <h1 class="welcome-title">Bienvenu à <span>B<span>2</span>M - Tombola !</span></h1>
+                            <p class="instructions">Bravo pour votre choix ! Vous avez sélectionné une boîte mystérieuse. Maintenant, préparez un cadeau spécial pour :</p>
+                        </div>
+
+                        <div class="gift-to">
+                            <h1>
+                                <i class="fa-solid fa-gift"></i>
+                                &nbsp;
+                                <?= $giftTo[0]['FirstName'] . ' ' . $giftTo[0]['LastName'] ?>
+                                &nbsp;
+                                <i class="fa-solid fa-gift"></i>
+                            </h1>
+                        </div>
+                    </div>
+
+                    <div class="details">
+                        <p>Votre cadeau doit ne pas dépasser <strong><?= $fee[0]['Fee'] ?><sup> DT</sup></strong> et doit être prêt dans :</p>
+                        <?= renderCounter($mode, $EndDateTime) ?>
+                    </div>
+                    <div class="circle-decoration"></div>
+                </div>
+        <?php break;
+        } ?>
+    </div>
+</div>

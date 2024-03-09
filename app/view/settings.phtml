@@ -1,0 +1,21 @@
+<div id="settings">
+    <?= renderNavBar($page, $user[0]['Admin']) ?>
+
+    <div class="user-area">
+        <div class="settings-target">
+            <div class="button <?= $Options == 'account-settings' ? 'active' : '' ?>">
+                <a href="?page=settings&settings=account" class="account-settings"><?= $user[0]['FirstName'] . ' ' . $user[0]['LastName'] ?></a>
+            </div>
+
+            <?php if ($user[0]['Admin']) { ?>
+                <div class="button <?= $Options == 'plateform-settings' ? 'active' : '' ?>">
+                    <a href="?page=settings&settings=plateform" class="plateform-settings">B2M-TOMBOLA</a>
+                </div>
+            <?php } ?>
+        </div>
+
+        <div class="options">
+            <?php include($Options . '.phtml') ?>
+        </div>
+    </div>
+</div>

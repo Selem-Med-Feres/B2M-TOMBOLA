@@ -1,0 +1,48 @@
+<div id="login" class="grid-50-50">
+    <div class="left-container">
+        <div class="logo">
+            <img src="./img/Logo.svg" alt="">
+        </div>
+
+        <div class="form-wrapper">
+            <h1>Se connecter</h1>
+            <p class='message <?= $message["class"] ?>'><?= $message['text'] ?></p>
+
+            <form id="form" method="POST" accept-charset="utf-8">
+                <div class="form-field">
+                    <label for="email">
+                        E-mail <span class="mandatory-mark">*</span>
+                        <input type="email" placeholder="E-mail" name="email" id="email" required aria-required="true">
+                    </label>
+                </div>
+
+                <div class="form-field">
+                    <label for="pwd">
+                        Mot de passe <span class="mandatory-mark">*</span>
+                        <input type="password" placeholder="Mot de passe" name="pwd" id="pwd" required aria-required="true">
+                    </label>
+                </div>
+
+                <div class="remember-me-wrapper">
+                    <input type="checkbox" name="remember-me" id="remember-me">
+                    <label for="remember-me">Se souvenir de moi</label>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="Se connecter">
+                    <br>
+                    <br>
+                    <div class="inline-container">
+                        <a href="?page=forgot-password">Mot de passe oublié ?</a>
+                        <br>
+                        <a href="?page=register">S'inscrire</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="right-container">
+        <div class="img-wrapper"></div>
+    </div>
+</div>

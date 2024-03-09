@@ -1,0 +1,31 @@
+<div id="users">
+    <?= renderNavBar($page, $currUser[0]['Admin']) ?>
+
+    <div class="users-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>E-mail</th>
+                    <th>Participe</th>
+                    <th>Tirage</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <?php foreach ($users as $user) { ?>
+                    <tr user-id="<?= $user['ID'] ?>">
+                        <td><?= $user['ID'] ?></td>
+                        <td><?= $user['FirstName'] ?></td>
+                        <td><?= $user['LastName'] ?></td>
+                        <td><a href="mailto:<?= $user['Email'] ?>"><?= $user['Email'] ?></a></td>
+                        <td><input type="checkbox" <?= ($user['Participate'] == 1 ? 'checked' : '') ?>></td>
+                        <td><?= user_draw($user['Draw']) ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+#settings {
+    display: grid;
+    grid-template-rows: 60px calc(100vh - 60px);
+    gap: 1.5rem;
+}
+
+#settings .user-area {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(max-content, 10%) minmax(max-content, 90%);
+}
+
+#settings .settings-target {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem 1rem 1rem 0;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+#settings .button {
+    margin: 0 0 5px 0;
+    width: 100%;
+    position: relative;
+    border-radius: 0.5rem;
+    transition: .1s;
+}
+
+#settings .button.active {
+    background-color: var(--main-color);
+    font-weight: bold;
+}
+
+#settings .button:not(.active):hover {
+    background-color: var(--glow);
+}
+
+#settings .button a {
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+    line-height: 1.5rem;
+    transition: .1s;
+    text-decoration: none;
+    color: black;
+}
+
+
+#settings .options {
+    border-radius: 1rem 1rem 0 1rem;
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    overflow: auto;
+}
+
+#settings .options .submit {
+    text-align: center;
+    padding: 1rem;
+}
+
+#settings p.message:not(:empty) {
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    max-width: 100%;
+    margin-bottom: 25px;
+    background-color: var(--main-color);
+    color: white;
+}

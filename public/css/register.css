@@ -1,0 +1,62 @@
+#register .left-container {
+    height: calc(100vh - 1.5rem);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: auto;
+}
+
+#register .logo img {
+    max-width: 20%;
+    max-height: 70%;
+}
+
+#register .form-wrapper {
+    width: 50%;
+    margin: auto;
+}
+
+
+#register .right-container .img-wrapper {
+    background-image: url(../img/b2m-it.jpg);
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#register h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--Color);
+    margin: 0;
+}
+
+#register p.message {
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    max-width: 100%;
+    margin-bottom: 25px;
+
+}
+
+#register p.red-bg {
+    background-color: #cc3930;
+    color: white;
+}
+
+#register p.orange-bg {
+    background-color: #ffa500;
+    color: white;
+}
+
+#register .submit {
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+#register .submit {
+    text-align: center;
+    font-size: 0.85rem;
+}

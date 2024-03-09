@@ -1,0 +1,32 @@
+<p class='message'><?= $message ?></p>
+
+<form id="form" method="POST" accept-charset="utf-8" action="../app/lib/plateform/set/index.php">
+    <div class="form-field">
+        <label for="draw-date">Date de tirage : <span class="mandatory-mark">*</span></label>
+        <input type="date" name="draw-date" id="draw-date" value="<?= $settings[0]['DrawDate'] ?>" required aria-required="true">
+    </div>
+
+    <div class="form-field">
+        <label for="draw-time">Heure de tirage : <span class="mandatory-mark">*</span></label>
+        <input type="time" name="draw-time" id="draw-time" value="<?= $settings[0]['DrawTime'] ?>" required aria-required="true">
+    </div>
+
+    <div class="form-field">
+        <label for="end-date">Date de fin : <span class="mandatory-mark">*</span></label>
+        <input type="date" name="end-date" id="end-date" value="<?= $settings[0]['EndDate'] ?>" required aria-required="true">
+    </div>
+
+    <div class="form-field">
+        <label for="end-time">Heure de fin : <span class="mandatory-mark">*</span></label>
+        <input type="time" name="end-time" id="end-time" value="<?= $settings[0]['EndTime'] ?>" required aria-required="true">
+    </div>
+
+    <div class="form-field">
+        <label for="budget">Budget du cadeau : <span class="mandatory-mark">*</span></label>
+        <input type="number" min="0" name="budget" id="budget" value="<?= $settings[0]['Fee'] ?>" required aria-required="true">
+    </div>
+
+    <div class="submit">
+        <input type="submit" value="Sauvegarder">
+    </div>
+</form>
